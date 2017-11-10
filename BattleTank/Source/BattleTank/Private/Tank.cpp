@@ -4,6 +4,7 @@
 #include "TankBarrel.h"
 #include "Projectile.h"
 #include "TankAimingComponent.h"
+#include "TankMovement.h"
 #include "UObject/UObjectGlobals.h"
 
 
@@ -41,7 +42,9 @@ ATank::ATank()
 
 	// no need to prtect pointers as added at contruction
 	TankAimingComponent = CreateDefaultSubobject<UTankAimingComponent>(FName("Aiming Component"));
+	TankMovement = CreateDefaultSubobject<UTankMovement>(FName("Movement Component"));
 }
+
 
 // Called when the game starts or when spawned
 void ATank::BeginPlay()
